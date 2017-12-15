@@ -4,3 +4,6 @@ Feature: TestWarez Agenda Search
     Given App has started
     When I tap on search icon
     Then Search input opens
+
+
+

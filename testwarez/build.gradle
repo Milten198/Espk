@@ -17,9 +17,11 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'com.android.application' //or apply plugin: 'java'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android' //or apply plugin: 'java'
 apply plugin: 'com.getkeepsafe.dexcount'
 apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
@@ -243,6 +245,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
     androidTestCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 def getReleaseProperties() {
