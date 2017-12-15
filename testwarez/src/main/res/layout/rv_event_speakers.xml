@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rb="http://schemas.android.com/tools"
+    android:id="@+id/speakers_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvRVEventSpeakersTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header_background"
+        android:paddingBottom="20dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="20dp"
+        android:text="@string/event_speakers"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/speakers_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:orientation="vertical" />
+
+    <com.pgssoft.testwarez.widget.BoundedFrameLayout
+        android:id="@+id/rate_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/default_padding"
+        app:bounded_width="600dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rate_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_gravity="center">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/rate_message_before"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="@dimen/default_padding"
+                    android:text="@string/rate_event_before"
+                    android:textColor="@color/primary_text" />
+
+                <FrameLayout
+                    android:id="@+id/rate_info_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rate_background_green">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <com.pgssoft.testwarez.widget.ratingbar.BaseRatingBar
+                            android:id="@+id/rating_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            rb:clearratingEnabled="false"
+                            rb:numStars="5"
+                            rb:rating="0"
+                            rb:stepSize="0.1"
+                            rb:touchable="false" />
+
+                        <TextView
+                            android:id="@+id/rate_info_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="6dp"
+                            android:text="Brak ocen"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/rate_message_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="@dimen/default_padding"
+                    android:text="@string/rate_event_after"
+                    android:textColor="@color/primary_text" />
+
+                <LinearLayout
+                    android:id="@+id/rate_button_stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/ic_star_yellow_36dp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="4dp"
+                        app:srcCompat="@drawable/ic_star_yellow_36dp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/ic_star_yellow_36dp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/rate_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/rate_button"
+                    android:text="@string/event_rate"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </com.pgssoft.testwarez.widget.BoundedFrameLayout>
+</LinearLayout>

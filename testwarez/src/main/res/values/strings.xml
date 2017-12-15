@@ -1,0 +1,192 @@
+<resources>
+    <string name="app_name">TestWarez</string>
+    <string name="title_activity_event">Wydarzenie</string>
+    <string name="title_activity_speaker">Prelegent</string>
+    <string name="title_activity_archive">Archiwum</string>
+
+    <string name="open_drawer_action" translatable="false">Open</string>
+    <string name="close_drawer_action" translatable="false">Close</string>
+
+    <string name="drawer_title_agenda">Agenda</string>
+    <string name="drawer_title_speakers">Prelegenci</string>
+    <string name="drawer_title_building_map">Plan budynku</string>
+    <string name="drawer_title_messages">Wiadomości</string>
+    <string name="drawer_title_archive">Archiwum</string>
+    <string name="drawer_title_map">Mapa</string>
+    <string name="drawer_title_about">O konferencji</string>
+    <string name="drawer_title_settings">Ustawienia</string>
+
+    <string name="event_activity_title">Wydarzenie</string>
+    <string name="event_menu_favorite">Ulubione</string>
+    <string name="event_menu_share">Udostępnij</string>
+    <string name="event_place_activity_title">Plan budynku</string>
+
+    <string name="about_tab_description">Opis konferencji</string>
+    <string name="about_tab_organizers">Organizatorzy</string>
+    <string name="about_tab_partners">Partnerzy</string>
+    <string name="about_tab_sponsors">Sponsorzy</string>
+    <string name="about_title_goal">CEL</string>
+
+    <string name="map_marker_title" translatable="false">Hotel Windsor</string>
+    <string name="map_marker_address1" translatable="false">Jachranka 75</string>
+    <string name="map_marker_address2" translatable="false">05-140 Serock</string>
+
+    <string name="event_lecture">WYKŁAD</string>
+    <string name="event_speakers">PRELEGENCI</string>
+    <string name="event_archives">MATERIAŁY</string>
+    <string name="event_place">MIEJSCE</string>
+    <string name="event_read_more">Czytaj więcej</string>
+    <string name="event_read_less">Czytaj mniej</string>
+    <string name="event_rate">Oceń prelekcję</string>
+
+    <string name="speaker_agenda">AGENDA</string>
+    <string name="speaker_contact">KONTAKT</string>
+    <string name="speaker_activity_title">Prelegent</string>
+
+    <string name="add_to_favorite_error">Wydarzenie koliduje z innym wydarzeniem na które jesteś zapisany</string>
+    <string name="add_to_favorite_success">Zapisano na wydarzenie</string>
+    <string name="remove_from_favorite_success">Wypisano z wydarzenia</string>
+
+    <string name="agenda_tab_all">WSZYSTKIE</string>
+    <string name="agenda_tab_favorite">MÓJ PLAN</string>
+
+    <string name="building_tab_floor1">POZIOM 1</string>
+    <string name="building_tab_parter_wing">SKRZYDŁO PARTER</string>
+    <string name="building_tab_floor_wing">SKRZYDŁO POZIOM 1</string>
+    <string name="search_toolbar_hint">Wyszukaj</string>
+    <string name="search_menu_title">Wyszukaj</string>
+
+    <string name="snackbar_sync_in_progress">Trwa synchronizacja…</string>
+    <string name="no_network">Brak internetu - tryb offline</string>
+    <string name="network_connection">Uruchomiono tryb online!</string>
+    <string name="error_loading_data">Wystąpił problem przy ładowaniu danych. Spróbuj ponownie później.</string>
+    <string name="notifications_general">Powiadomienia ogólne</string>
+    <string name="notifications">Przypomnienia</string>
+    <string name="notification_time">Czas przypomnienia</string>
+    <string name="notifications_description">Aplikacja powiadomi Ciebie o wydarzeniu przed jego rozpoczęciem</string>
+
+    <string-array name="notification_times">
+        <item>Na początku</item>
+        <item>5 min</item>
+        <item>15 min</item>
+        <item>30 min</item>
+        <item>1 godz</item>
+    </string-array>
+
+    <string name="notification_title">Przypomnienie o wydarzeniu</string>
+    <string name="notification_content_time">%1$s rozpocznie się za %2$s.</string>
+    <string name="notification_content_onstart">%1$s właśnie się rozpoczyna.</string>
+
+    <string name="notifications_popup_title">Przypomnienia</string>
+    <string name="notifications_popup_content">Aplikacja chce wysyłać Tobie powiadomienia o rozpoczynających się wydarzeniach oraz wszystkich aktualizacjach na konferencji</string>
+    <string name="notifications_popup_yes">ZGADZAM SIĘ</string>
+    <string name="notifications_popup_no">Nie, dziękuję</string>
+
+    <string name="chooser_app_message">Otwórz plik za pomocą…</string>
+    <string name="chooser_email">Wyślij email…</string>
+    <string name="chooser_facebook">Otwórz profil…</string>
+    <string name="chooser_twitter">Otwórz profil…</string>
+    <string name="chooser_linkedin">Otwórz profil…</string>
+    <string name="chooser_skype_error">Aby zadzwonić musisz posiadać zainstalowaną aplikację Skype</string>
+
+    <string name="day">%1$d DZIEŃ - %2$s</string>
+
+    <string name="push_message_title">TestWarez</string>
+    <string name="messages_chooser_title">Otwórz link…</string>
+    <string name="company_list_chooser_title">Otwórz stronę…</string>
+    <string name="downloading_file">Pobieranie pliku </string>
+    <string name="download_completed">Pobieranie zakończone</string>
+    <string name="user_accept">ROZUMIEM</string>
+
+    <!--ArchiveActivity-->
+    <string name="archive_tab_events">Wydarzenia</string>
+    <string name="archive_tab_gallery">Galeria</string>
+    <string name="archive_tab_video">Wideo</string>
+    <string name="no_archive_events">Brak archiwalnych prelekcji</string>
+    <string name="no_archive_galleries">Brak archiwalnych galerii</string>
+    <string name="no_archive_videos">Brak archiwalnych filmów</string>
+    <string name="archive_loading_message">Trwa pobieranie\nkonferencji archiwalnych</string>
+    <string name="archive_loading_no_internet"><b>Brak internetu</b>\nSynchronizacja zostanie wznowiona\npo jego ponownym uruchomieniu</string>
+    <string name="no_archive_conferences"><b>Brak konferencji archiwalnych</b></string>
+    <string name="download_file_message">Pobieranie pliku rozpoczęte</string>
+    <string name="open">OTWÓRZ</string>
+    <string name="no_app_title">Brak aplikacji</string>
+    <string name="no_app_message">Nie posiadasz aplikacji do otwarcia tego typu pliku. Chcesz przejść do sklepu Google Play, aby ją pobrać?</string>
+    <string name="no_google_play">Nie posiadasz zainstalowanego sklepu Google Play</string>
+
+    <!--FilterActivity-->
+    <string name="remove_filters">Usuń wszystkie flitry</string>
+    <string name="day_of_conferences">Dni konferencji</string>
+    <string name="conferences">Konferencje</string>
+    <string name="file_types">Typy plików</string>
+    <string name="tracks">Ścieżki</string>
+    <string name="menu_accept">Akceptuj</string>
+    <string name="saved_filters">Zapisano filtry</string>
+
+    <!--FileTypes-->
+    <string name="file_type_pdf">PDF</string>
+    <string name="file_type_doc">Doc / Docx</string>
+    <string name="file_type_presentation">Prezentacja</string>
+    <string name="file_type_video">Film</string>
+    <string name="file_type_link">Link zewnętrzny</string>
+
+    <string name="calendar_synchronize">Synchronizuj z kalendarzem</string>
+
+    <string name="look_previous_edition">Zobacz poprzednie edycje</string>
+
+    <string name="technical_person">OSOBA TECHNICZNA</string>
+    <string name="technical_place">OPIS</string>
+    <string name="social_media">SOCIAL MEDIA</string>
+    <string name="organizers">ORGANIZATORZY</string>
+    <string name="lack_of_elements">Brak elementów</string>
+    <string name="atleast_one_item_should_be_selected">Conajmniej jeden element powinien być zaznaczony</string>
+    <string name="filter_title">Filtrowanie</string>
+    <string name="all">Wszystkie</string>
+    <string name="day_text">dzień</string>
+    <string name="continous">TRWA</string>
+    <string name="internet_request">Połącz się z Internetem, aby móc korzystać z aplikacji</string>
+    <string name="calendar_permission_request">W ustawieniach została włączona opcja synchronizacji. To uprawnienie jest wymagane, aby ta funkcjonalność mogła działać poprawnie.</string>
+    <string name="version">Wersja: %1$s</string>
+    <string name="no">Nie</string>
+    <string name="yes">Tak</string>
+    <string name="cancel">Anuluj</string>
+    <string name="submit">Akceptuj</string>
+    <string name="error_player">Błąd podczas inicjalizacji (%1$s)</string>
+    <string name="youtube_api_key">AIzaSyC5DZtWD9XS2AGD6MujVt2rdPGqJCIq1t8</string>
+    <string name="apply">Zatwierdź</string>
+    <string name="clear_filters">Usuń filtry</string>
+    <string name="notification_sync_archive">Synchronizacja archiwum</string>
+    <string name="notification_sync_archive_completed">Synchronizacja zakończona</string>
+    <string name="error_during_loading_file">Wystąpił błąd podczas ładowania</string>
+    <string name="notification_summary_text">%1$s%2$d wiadomości…</string>
+    <string name="synchronization_error">Błąd synchronizacji</string>
+    <string name="language">Język</string>
+    <string name="choose_room_by_click">Wybierz salę poprzez kliknięcie</string>
+    <string name="can_not_load_the_movie">Nie można odtworzyć filmu</string>
+    <string name="rate_event_before">Oceń prelekcję zaraz \n<b>po zakończeniu!</b></string>
+    <string name="rate_event_after"><b>Dziękujemy</b>, już\noceniłeś tę prelekcję!</string>
+    <string name="no_rating">Brak ocen</string>
+
+    <string name="images_url_default">api/v2/images/%d/sizes/0/dimensions/default</string>
+    <string name="images_url_custom_size">api/v2/images/%1$d/sizes/%2$d/dimensions/%3$s</string>
+
+    <string name="rate_header">Co myślisz o prelekcji?</string>
+    <string name="rate_comment_header">Masz jakieś przemyślenia?</string>
+    <string name="rate_comment_hint">Daj nam znać</string>
+    <string name="rate_button_text">Wyślij ocenę</string>
+    <string name="rate_thank_you">Dziękujemy!</string>
+    <string name="rate"> / 5</string>
+    <string name="rate_success">Ocena została wysłana pomyślnie!</string>
+    <string name="rate_fail">Wysłanie oceny nie powiodło się</string>
+
+    <string name="rate_1">Słaba…</string>
+    <string name="rate_2">Mogło być lepiej…</string>
+    <string name="rate_3">Fajna!</string>
+    <string name="rate_4">Bardzo dobra!</string>
+    <string name="rate_5">Była moc!</string>
+
+    <string name="switch_favorite_event_title">Znaleziono kolidujące prelekcje</string>
+    <string name="switch_favorite_event_actual">Aktualna</string>
+    <string name="switch_favorite_event_previous">Poprzednia</string>
+    <string name="switch_favorite_event_text">Próbujesz dodać prelekcję \"%1$s\", która koliduje czasowo z wcześniej dodaną prelekcją \"%2$s\". Proszę zdecydować, która prelekcja powinna znajdować się w Twoim planie.</string>
+</resources>

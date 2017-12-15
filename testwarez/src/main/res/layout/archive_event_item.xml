@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <GridLayout
+        android:id="@+id/files_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:columnCount="2">
+
+        <ImageView
+            android:id="@+id/archive_event_file_icon_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+           />
+
+        <ImageView
+            android:id="@+id/archive_event_file_icon_1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            />
+
+        <ImageView
+            android:id="@+id/archive_event_file_icon_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            />
+
+        <ImageView
+            android:id="@+id/archive_event_file_icon_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/files_container"
+        android:layout_toEndOf="@id/files_container"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/archive_event_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:id="@+id/llArchiveEventItemSpeakers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dividers"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

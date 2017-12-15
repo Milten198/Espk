@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+    <ImageView
+        android:id="@+id/ivNotificationIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_testwarez_logo_circle"/>
+
+
+    <LinearLayout
+        android:id="@+id/llNotificationContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toLeftOf="@+id/tvNotificationTime"
+        android:layout_toRightOf="@+id/ivNotificationIcon"
+        android:layout_alignTop="@+id/ivNotificationIcon">
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            style="@style/NotificationTitle"
+            />
+
+        <TextView
+            android:id="@android:id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            style="@style/NotificationText"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@id/tvNotificationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/llNotificationContent"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right"
+        style="@style/NotificationText" />
+
+</RelativeLayout>

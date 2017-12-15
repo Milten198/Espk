@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="2dp"
+    android:paddingEnd="2dp">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvFragmentArchiveGallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/no_galleries_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_archive_galleries"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>

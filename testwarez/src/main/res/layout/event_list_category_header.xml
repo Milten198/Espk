@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/category_title_container"
+    android:background="@color/header_background">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        android:textColor="@color/secondary_text"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-medium"
+        tools:text="WYKLADY OTWIERAJACE 10:30 - 12:00"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividers"/>
+
+</LinearLayout>

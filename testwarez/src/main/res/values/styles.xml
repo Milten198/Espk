@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+
+    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/tab_indicator</item>
+        <item name="tabIndicatorHeight">5dp</item>
+        <item name="tabTextAppearance">@style/TabLayoutTextStyle</item>
+        <item name="tabSelectedTextColor">@color/tab_indicator</item>
+    </style>
+
+    <style name="TabLayoutTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ExpandedTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="SwitchCompatColor">
+        <item name="colorControlActivated">@color/primary</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+    </style>
+
+    <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title" />
+
+    <style name="NotificationText" parent="android:TextAppearance.StatusBar.EventContent" />
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llEventListItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/simple_button_bg"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/tvItemAgendaEventContinous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="@dimen/medium_offset"
+        android:background="@color/continous"
+        android:padding="3dp"
+        android:text="@string/continous"
+        android:textColor="#fff"
+        android:textSize="9sp"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/vEventListItemTrackIndicator"
+        android:layout_width="4dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvItemAgendaEventContinous"
+        android:layout_marginRight="-4dp"
+        android:background="#33deee"
+        android:minHeight="50dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="visible" />
+
+
+    <RelativeLayout
+        android:id="@+id/rlItemAgendaEventTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/title"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:paddingLeft="2dp"
+            tools:text="09:30" />
+
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/start_time"
+            android:layout_below="@id/start_time"
+            android:fontFamily="sans-serif-light"
+            android:maxLines="1"
+            android:textSize="13sp"
+            android:textColor="@color/secondary_text"
+            tools:text="- 09:30" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvItemAgendaEventContinous"
+        android:layout_marginRight="@dimen/expanded_toolbar_margin"
+        android:layout_toRightOf="@id/rlItemAgendaEventTime"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="8dp"
+        android:minLines="2"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        tools:text="TestPlan 2.0 z wykorzystaniem modelu ACC i Google Test Analitycs" />
+
+
+    <ImageView
+        android:id="@+id/favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/rlItemAgendaEventTime"
+        android:layout_below="@id/rlItemAgendaEventTime"
+        android:layout_alignLeft="@id/rlItemAgendaEventTime"
+        android:layout_marginTop="@dimen/medium_offset"
+        tools:src="@drawable/calendar_grey" />
+
+    <RelativeLayout
+        android:id="@+id/rlItemAgendaEventDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="@id/favorite"
+        android:layout_marginLeft="@dimen/medium_offset"
+        android:layout_marginTop="@dimen/medium_offset"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@id/favorite"
+        android:layout_below="@id/title">
+
+        <LinearLayout
+            android:id="@+id/llEventListItemSpeakers"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/agenda_speaker_item_height"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/tvEventListItemPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/agenda_speaker_item_height"
+            android:minWidth="50dp"
+            android:maxLines="5"
+            android:gravity="center_vertical"
+            android:layout_marginRight="@dimen/expanded_toolbar_margin"
+            android:layout_toRightOf="@id/llEventListItemSpeakers"
+            android:textSize="12sp"
+            android:text="place" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/rlItemAgendaEventDetails"
+        android:background="@color/dividers" />
+
+</RelativeLayout>

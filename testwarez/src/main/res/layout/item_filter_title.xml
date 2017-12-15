@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvItemFilterTitle"
+        android:padding="@dimen/medium_offset"
+        android:text="Dzień"
+        android:background="@color/header_background"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/simple_button_bg">
+
+        <TextView
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/all"
+            android:layout_marginLeft="@dimen/medium_offset"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dividers"
+            android:layout_alignParentBottom="true"/>
+
+        <ImageView
+            android:id="@+id/ivItemFilterMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_check_circle_black_24dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/medium_offset"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

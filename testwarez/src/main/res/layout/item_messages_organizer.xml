@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/medium_offset"
+    android:paddingRight="@dimen/medium_offset"
+    android:paddingTop="@dimen/medium_offset"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvItemMessagesOrganizerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dsgfsd"
+        android:textColor="#000" />
+
+
+    <TextView
+        android:id="@+id/tvItemMessagesOrganizerTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/medium_offset"
+        android:textSize="11sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tvItemMessagesOrganizerTitle"
+        android:layout_marginTop="@dimen/medium_offset"
+        android:background="@color/dividers" />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#00BCD4</color>
+    <color name="primary_dark">#009eb3</color>
+    <color name="primary_text">#000</color>
+    <color name="secondary_text">#858585</color>
+    <color name="shadow">#80000000</color>
+    <color name="drawer_background">#00ACC1</color>
+    <color name="drawer_item_selected_background">#FFFFFF</color>
+    <color name="drawer_item_color">#ffffff</color>
+    <color name="screen_background">#ffffff</color>
+    <color name="header_background">#f5f5f5</color>
+    <color name="ripple_background">#34000000</color>
+    <color name="ripple_background_light">#10000000</color>
+    <color name="dividers">#14000000</color>
+    <color name="network_error_background">#ff1842</color>
+    <color name="tab_indicator">#3f5974</color>
+    <color name="continous">#8bc34a</color>
+    <color name="transparent">#00000000</color>
+    <color name="media_controller_bg">#94333333</color>
+    <color name="icon_bg">#00afea</color>
+    <color name="filter_item_bg_grey">#cecece</color>
+    <color name="filter_item_text_grey">#666666</color>
+    <color name="lp_toolbar_title">#FFFFFFFF</color>
+    <color name="rate_background">#4AB039</color>
+    <color name="star_color">#FFFFFD</color>
+    <color name="star_color_empty">#77FFFFFD</color>
+    <color name="primary_disabled">#BBE4EC</color>
+    <color name="button_text_disabled">#66091B1F</color>
+    <color name="rate_stars_background">#223DBDD6</color>
+    <color name="stroke">#CCCCCC</color>
+    <color name="star_color_yellow">#FFD204</color>
+</resources>

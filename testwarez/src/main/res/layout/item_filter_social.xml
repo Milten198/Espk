@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/simple_button_bg">
+
+    <TextView
+        android:id="@+id/tvItemFilterSocial"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="Test"
+        android:layout_marginLeft="@dimen/medium_offset"
+        android:layout_toRightOf="@+id/ivItemFilterSocialIndicator"
+        android:textColor="#000"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividers"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/ivItemFilterMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/filter_marker"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/medium_offset"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
+        android:id="@id/ivItemFilterSocialIndicator"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/facebook"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/medium_offset"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="6dp"/>
+
+</RelativeLayout>

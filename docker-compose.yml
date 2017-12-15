@@ -1,0 +1,9 @@
+testwarez:
+  build: ./docker
+  volumes:
+    - .:/opt/workspace
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ./dot-gradle:/root/.gradle
+    - /dev/bus/usb:/dev/bus/usb
+
+  privileged: true

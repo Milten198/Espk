@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="agenda_header_margin">48dp</dimen>
+    <dimen name="about_banner_height">320dp</dimen>
+</resources>

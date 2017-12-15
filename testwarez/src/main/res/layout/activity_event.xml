@@ -1,0 +1,90 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clActivityEvent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentScrim="@color/primary"
+            app:expandedTitleGravity="center_vertical"
+            app:expandedTitleMarginStart="@dimen/expanded_toolbar_margin"
+            app:expandedTitleTextAppearance="@style/ExpandedTextAppearance"
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/primary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin" />
+
+        </net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlActivityEventBarContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_anchor="@id/toolbar"
+        app:layout_anchorGravity="bottom"
+        app:layout_behavior="com.pgssoft.testwarez.util.EventBarBehavior">
+
+        <TextView
+            android:id="@+id/tvActivityEventContinous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="@dimen/expanded_toolbar_margin"
+            android:layout_marginTop="@dimen/expanded_toolbar_top_margin"
+            android:background="@color/continous"
+            android:padding="3dp"
+            android:text="@string/continous"
+            android:textColor="#fff"
+            android:textSize="9sp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/vActivityEventTrackIndicator"
+            android:layout_width="@dimen/track_indicator_width"
+            android:layout_height="60dp"
+            android:layout_below="@id/tvActivityEventContinous"
+            android:background="#000"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/nestedscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/app_bar_layout"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        app:srcCompat="@drawable/calendar_grey"
+        app:backgroundTint="@android:color/white"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|right" />
+
+</android.support.design.widget.CoordinatorLayout>

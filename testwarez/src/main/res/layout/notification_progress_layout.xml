@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivNotificationIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_testwarez_logo_circle" />
+
+    <TextView
+        android:id="@android:id/title"
+        style="@style/NotificationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pbNotificationProgressBar"
+        android:layout_toRightOf="@+id/ivNotificationIcon"
+        android:text="@string/app_name" />
+
+    <ProgressBar
+        android:id="@id/pbNotificationProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:layout_toRightOf="@+id/ivNotificationIcon" />
+
+    <TextView
+        android:id="@android:id/content"
+        style="@style/NotificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pbNotificationProgressBar"
+        android:layout_toRightOf="@+id/ivNotificationIcon"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@id/tvNotificationTime"
+        style="@style/NotificationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/pbNotificationProgressBar"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/llNotificationContent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:gravity="right" />
+
+</RelativeLayout>

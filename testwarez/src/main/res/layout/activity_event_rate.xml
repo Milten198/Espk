@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_rate_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_background"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/rate_stars_background"
+            android:padding="@dimen/default_padding">
+
+            <ImageView
+                android:id="@+id/rate_none_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                app:srcCompat="@drawable/ic_rate_none_icon" />
+
+            <TextView
+                android:id="@+id/rate_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_none_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/default_padding"
+                android:text="@string/rate_header"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rate_star_message_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_message"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/default_padding"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/rate_star_icon"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginEnd="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    app:srcCompat="@drawable/ic_rate_1_icon" />
+
+                <TextView
+                    android:id="@+id/rate_star_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/rate_star_icon"
+                    android:layout_toRightOf="@id/rate_star_icon"
+                    android:textColor="@color/primary_text"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <com.pgssoft.testwarez.widget.StarRatingBar
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rate_star_message_container"
+                android:layout_centerHorizontal="true"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="1" />
+
+            <ImageView
+                android:id="@+id/image_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rating_bar"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/rate_comment_header"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_stroke_background"
+                android:minHeight="112dp"
+                android:padding="@dimen/default_padding">
+
+                <EditText
+                    android:id="@+id/message_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/rate_comment_hint"
+                    android:maxLength="2000" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/button_rate_send"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/default_padding"
+                android:background="@drawable/rate_button"
+                android:text="@string/rate_button_text"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sending_rate_text"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/default_padding"
+                android:gravity="center"
+                android:text="Wysyłanie oceny..."
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rate_successful_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rate_successful_thanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/success_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/default_padding_small"
+                android:layout_marginRight="@dimen/default_padding_small"
+                app:srcCompat="@drawable/ic_success" />
+
+            <TextView
+                android:id="@+id/success_thanks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/success_icon"
+                android:layout_toRightOf="@id/success_icon"
+                android:text="@string/rate_thank_you"
+                android:textColor="@color/screen_background"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/success_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rate_successful_thanks"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.6"
+            android:text="@string/rate_success"
+            android:textColor="@color/screen_background"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</FrameLayout>

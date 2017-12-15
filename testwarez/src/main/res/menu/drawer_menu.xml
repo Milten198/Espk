@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/agenda_menu_item"
+            android:checked="true"
+            android:icon="@drawable/agenda"
+            android:title="@string/drawer_title_agenda"/>
+
+        <item
+            android:id="@+id/speakers_menu_item"
+            android:checked="false"
+            android:icon="@drawable/people"
+            android:title="@string/drawer_title_speakers"/>
+
+        <item
+            android:id="@+id/building_map_menu_item"
+            android:checked="false"
+            android:icon="@drawable/directions"
+            android:title="@string/drawer_title_building_map"/>
+
+        <item
+            android:id="@+id/messages_menu_item"
+            android:checked="false"
+            android:icon="@drawable/drawer_mail"
+            android:title="@string/drawer_title_messages"/>
+
+        <item
+            android:id="@+id/archive_menu_item"
+            android:checked="false"
+            android:icon="@drawable/archive"
+            android:title="@string/drawer_title_archive"/>
+
+        <item
+            android:id="@+id/map_menu_item"
+            android:checked="false"
+            android:icon="@drawable/map"
+            android:title="@string/drawer_title_map"/>
+
+        <item
+            android:id="@+id/about_menu_item"
+            android:checked="false"
+            android:icon="@drawable/about"
+            android:title="@string/drawer_title_about"/>
+
+        <item
+            android:id="@+id/settings_menu_item"
+            android:checked="false"
+            android:icon="@drawable/settings"
+            android:title="@string/drawer_title_settings"/>
+    </group>
+</menu>

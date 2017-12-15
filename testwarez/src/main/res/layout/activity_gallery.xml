@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlActivityGalleryContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:background="#000">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/primary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    <com.pgssoft.testwarez.widget.FixedViewPager
+        android:id="@+id/vpActivityGallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:id="@+id/gallery_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/shadow"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/gallery_image_previous"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/collapse_white"
+            android:rotation="-90"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/gallery_image_counter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="2 z 36"
+            android:textSize="20sp"
+            android:textColor="@color/drawer_item_selected_background" />
+
+        <ImageButton
+            android:id="@+id/gallery_image_next"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/collapse_white"
+            android:rotation="90"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+</RelativeLayout>

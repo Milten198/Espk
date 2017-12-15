@@ -1,0 +1,242 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.21.7'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.5.6'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.7.2'
+    }
+}
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    mavenCentral()
+}
+
+apply plugin: 'com.android.application' //or apply plugin: 'java'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.pgssoft.testwarez"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 33
+        versionName "3.0.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    signingConfigs {
+
+        debug {
+            final Properties signingProperties = getDebugProperties()
+            storeFile file(signingProperties['keystore_dir'])
+            storePassword signingProperties['keystore_password']
+            keyPassword signingProperties['key_password']
+            keyAlias signingProperties['alias']
+        }
+
+        signedRelease {
+            final Properties signingProperties = getReleaseProperties()
+            storeFile file(signingProperties['keystore_dir'])
+            storePassword signingProperties['keystore_password']
+            keyPassword signingProperties['key_password']
+            keyAlias signingProperties['alias']
+        }
+    }
+
+    buildTypes {
+
+        unsignedDebugDev {
+            ext.isDebug = true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig android.signingConfigs.debug
+            debuggable true
+            multiDexEnabled true
+            resValue "string", "endpoint", "http://10.10.70.31/app_dev.php/"
+            ext.betaDistributionEmailsFilePath = "fabricTestersList.txt"
+            ext.betaDistributionReleaseNotesFilePath = "fabricMessage.txt"
+            ext.betaDistributionNotifications = true
+        }
+
+        unsignedDebugProd {
+            ext.isDebug = true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig android.signingConfigs.debug
+            debuggable true
+            resValue "string", "endpoint", "http://api.testwarez.pl/"
+        }
+
+        signedReleaseProd {
+            ext.isDebug = false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig android.signingConfigs.debug
+            debuggable false
+            resValue "string", "endpoint", "http://api.testwarez.pl/"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    testBuildType "unsignedDebugDev"
+
+    testOptions {
+        unitTests.all {
+            systemProperty 'robolectric.dependency.repo.url', 'https://local-mirror/repo'
+            systemProperty 'robolectric.dependency.repo.id', 'local'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "3g"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'TypographyFractions', 'TypographyQuotes', ''
+
+    }
+}
+
+apply plugin: 'me.tatarka.retrolambda'
+
+retrolambda {
+    jdk System.getenv("JAVA_HOME")
+    defaultMethods false
+    incremental true
+}
+
+android.variantFilter { variant ->
+    if (variant.buildType.name.equals('release') || variant.buildType.name.equals('debug')) {
+        variant.setIgnore(true)
+    }
+}
+
+dependencies {
+
+    compile project(':areatouchdetector')
+
+    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'net.opacapp:multiline-collapsingtoolbar:1.4.0'
+    compile 'com.github.chrisbanes:PhotoView:1.2.6'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.android.support:multidex:1.0.2'
+
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.google.android.gms:play-services-gcm:11.2.2'
+    compile 'com.google.android.gms:play-services-maps:11.2.2'
+
+    compile 'com.squareup:otto:1.3.8'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    compile('com.squareup.retrofit2:retrofit:2.3.0') {
+        transitive = true
+    }
+    compile group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '3.4.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    compile 'net.danlew:android.joda:2.9.4'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.mobsandgeeks:adapter-kit:0.5.3'
+    compile 'de.hdodenhof:circleimageview:1.3.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
+        transitive = true
+    }
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.3.0'
+    compile 'com.jakewharton.timber:timber:4.5.1'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
+    compile 'com.trello:rxlifecycle:0.5.0'
+    compile 'com.trello:rxlifecycle-components:0.5.0'
+    compile 'com.github.pwittchen:reactivenetwork:0.2.0'
+    compile 'com.facebook.stetho:stetho:1.4.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.16'
+    compile 'com.github.tommus:youtube-android-player-api:1.2.2'
+
+    //UnitTests dependencies
+    testCompile 'com.google.code.gson:gson:2.7'
+    testCompile 'net.danlew:android.joda:2.9.4'
+    testCompile(group: 'com.fatboyindustrial.gson-jodatime-serialisers', name: 'gson-jodatime-serialisers', version: '1.3.0', changing: true) {
+        transitive = true
+    }
+    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+
+    testCompile 'org.robolectric:robolectric:3.1'
+    testCompile 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:1.10.19"
+    compile 'com.f2prateek.robin:robin:1.0.0'
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.8.1'
+
+    androidTestCompile 'com.android.support:multidex-instrumentation:1.0.2'
+    androidTestCompile('com.android.support.test:runner:1.0.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile 'junit:junit:4.12'
+}
+
+def getReleaseProperties() {
+    Properties properties = new Properties()
+
+    File releaseFile = file("../keystore.jks")
+    File signingFile = file("../signing.properties")
+
+    if (releaseFile.exists() && signingFile.exists()) {
+        properties.load(new FileInputStream(signingFile))
+        return properties
+    } else {
+        return getDebugProperties()
+    }
+}
+
+def getDebugProperties() {
+    Properties properties = new Properties()
+
+    properties.put("keystore_dir", "../debug_keystore.jks")
+    properties.put("keystore_password", "TestWarez!XyZ")
+    properties.put("key_password", "TestWarez!XyZ")
+    properties.put("alias", "testwarez")
+    return properties
+}
+
+
+android.applicationVariants.all { variant ->
+    if (variant.name.contains('myflavor')) {
+        // Do stuff
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

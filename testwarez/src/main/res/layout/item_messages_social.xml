@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/medium_offset"
+    >
+
+    <ImageView
+        android:id="@+id/social_avatar"
+        android:layout_width="@dimen/social_avatar_size_mini"
+        android:layout_height="@dimen/social_avatar_size_mini"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        tools:src="@mipmap/icon_android2"/>
+
+    <LinearLayout
+        android:id="@+id/llItemMessagesSocial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_toRightOf="@id/social_avatar"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"
+            tools:text="10:00, 30 lipca 2015"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            tools:text="Neuri Consulting LLP Neuri Consulting LLP Neuri Consulting LLP Neuri Consulting LLP"/>
+
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            tools:text="www.twitter.com"/>
+
+        <com.pgssoft.testwarez.widget.AspectRatioImageView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:src="@mipmap/icon_android2"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/llItemMessagesSocial"
+        android:layout_marginTop="@dimen/medium_offset"
+        android:background="@color/dividers" />
+
+</RelativeLayout>

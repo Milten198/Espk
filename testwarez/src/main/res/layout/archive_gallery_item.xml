@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rvGalleryLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cardview:cardElevation="0dp"
+        cardview:cardCornerRadius="0dp"
+        cardview:cardPreventCornerOverlap="false"
+        android:layout_margin="2dp">
+
+        <ImageView
+            android:id="@+id/rvGalleryItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+
+        <ProgressBar
+            android:id="@+id/rvGalleryProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_gravity="center"/>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

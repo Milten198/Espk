@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_padding_small">8dp</dimen>
+    <dimen name="avatar_size_mini">50dp</dimen>
+    <dimen name="social_avatar_size_mini">50dp</dimen>
+    <dimen name="archive_file_icon_size">24dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="double_toolbar_height">112dp</dimen>
+    <dimen name="speakers_list_divider_spacing">24dp</dimen>
+    <dimen name="speakers_list_padding">16dp</dimen>
+	<dimen name="speaker_toolbar_height">180dp</dimen>
+	<dimen name="speakers_activity_avatar_size">80dp</dimen>
+    <dimen name="expanded_toolbar_margin">20dp</dimen>
+    <dimen name="expanded_toolbar_top_margin">35dp</dimen>
+    <dimen name="medium_offset">15dp</dimen>
+    <dimen name="small_offset">10dp</dimen>
+    <dimen name="track_indicator_width">4dp</dimen>
+    <dimen name="agenda_speaker_item_height">20dp</dimen>
+    <dimen name="media_controller_height">140dp</dimen>
+    <dimen name="agenda_header_margin">24dp</dimen>
+    <dimen name="about_banner_height">156dp</dimen>
+    <dimen name="large_offset">30dp</dimen>
+</resources>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contact_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/primary_text"
+        android:text="@string/speaker_contact"
+        android:background="@color/header_background"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/skype_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingBottom="@dimen/small_offset"
+        android:paddingTop="@dimen/small_offset"
+        android:background="@drawable/simple_button_bg">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/skype"
+            android:layout_marginRight="@dimen/medium_offset"/>
+
+        <TextView
+            android:id="@+id/skype"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            tools:text="k.kupidura"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/email_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingBottom="@dimen/small_offset"
+        android:paddingTop="@dimen/small_offset"
+        android:background="@drawable/simple_button_bg">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/mail"
+            android:layout_marginRight="@dimen/medium_offset"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            tools:text="k.kupidura"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fon_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingBottom="@dimen/small_offset"
+        android:paddingTop="@dimen/small_offset"
+        android:background="@drawable/simple_button_bg">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/fon"
+            android:layout_marginRight="@dimen/medium_offset"/>
+
+        <TextView
+            android:id="@+id/fon"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            tools:text="k.kupidura"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/facebook_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingBottom="@dimen/small_offset"
+        android:paddingTop="@dimen/small_offset"
+        android:background="@drawable/simple_button_bg">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/facebook"
+            android:layout_marginRight="@dimen/medium_offset"/>
+
+        <TextView
+            android:id="@+id/facebook"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            tools:text="k.kupidura"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/twitter_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingBottom="@dimen/small_offset"
+        android:paddingTop="@dimen/small_offset"
+        android:background="@drawable/simple_button_bg">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/twitter"
+            android:layout_marginRight="@dimen/medium_offset"/>
+
+        <TextView
+            android:id="@+id/twitter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            tools:text="k.kupidura"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linkedin_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/medium_offset"
+        android:paddingRight="@dimen/medium_offset"
+        android:paddingBottom="@dimen/small_offset"
+        android:paddingTop="@dimen/small_offset"
+        android:background="@drawable/simple_button_bg">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/linkedin"
+            android:layout_marginRight="@dimen/medium_offset"/>
+
+        <TextView
+            android:id="@+id/linkedin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center_vertical"
+            tools:text="k.kupidura"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AreaTouchableView">
+        <attr name="top" format="integer"/>
+        <attr name="mask" format="integer"/>
+        <attr name="disable_gestures" format="boolean"/>
+    </declare-styleable>
+</resources>

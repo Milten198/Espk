@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFF">
+
+    <ImageView
+        android:id="@+id/ivItemFilterFileTypeIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/medium_offset"
+        android:layout_marginStart="@dimen/medium_offset"/>
+
+    <TextView
+        android:id="@+id/tvItemFilterFileType"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="Test"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toRightOf="@+id/ivItemFilterFileTypeIcon"
+        android:layout_toEndOf="@+id/ivItemFilterFileTypeIcon"
+        android:textColor="#000"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividers"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/ivItemFilterMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/filter_marker"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/medium_offset"
+        android:layout_marginEnd="@dimen/medium_offset"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
