@@ -9,6 +9,7 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
 import static android.support.test.espresso.core.internal.deps.guava.base.Preconditions.checkNotNull;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by lfrydrych on 20.12.2017.

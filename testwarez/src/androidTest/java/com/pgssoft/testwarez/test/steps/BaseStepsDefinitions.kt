@@ -51,6 +51,7 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
     @Given("App has started")
     @Throws(InterruptedException::class)
     fun givenAppHasStarted() {
+        Thread.sleep(1000)
         Assert.assertNotNull(mActivity)
     }
 
