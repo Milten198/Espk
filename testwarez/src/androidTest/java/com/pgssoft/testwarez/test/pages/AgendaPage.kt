@@ -8,6 +8,7 @@ import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.v7.widget.RecyclerView
 import com.pgssoft.testwarez.R
+import com.pgssoft.testwarez.test.utils.CustomMatcher
 import org.hamcrest.Matchers.allOf
 
 /**
@@ -39,6 +40,7 @@ class AgendaPage {
     fun tapOnFilterIcon() {
         onView(withId(R.id.main_menu_filter))
                 .perform(click())
+        Thread.sleep(3000)
     }
 
     fun tapOnFilterDateOne() {
@@ -54,11 +56,11 @@ class AgendaPage {
     fun confirmFilters() {
         onView(withId(R.id.bActivityFilterApply))
                 .perform(click())
+        Thread.sleep(3000)
     }
 
-    fun checkOnlyDay3rdEventsAreDispleyed() {
+    fun checkOnlyDay3rdEventsAreDisplayed() {
         onView(withId(R.id.agenda_recycler_view))
-                .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+                .check(matches(CustomMatcher.atPosition(0, withText("3 DZIEŃ - piątek 17 listopada"))))
     }
-
 }

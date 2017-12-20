@@ -21,7 +21,7 @@ class AgendaSteps {
 
     @When("I tap on filter icon")
     fun whenITapOnFilterIcon() {
-
+        agendaPage.tapOnFilterIcon()
     }
 
     @And("I type into input field")
@@ -31,12 +31,13 @@ class AgendaSteps {
 
     @And("I tap on first 2 days")
     fun andITapOnFirst2Days() {
-
+        agendaPage.tapOnFilterDateOne()
+        agendaPage.tapOnFilterDateTwo()
     }
 
     @And("I confirm filters")
     fun andIConfirm() {
-
+        agendaPage.confirmFilters()
     }
 
     @Then("Search input opens")
@@ -51,6 +52,6 @@ class AgendaSteps {
 
     @Then("I can see only events for 3rd day")
     fun thenICanSeeOnlyEventsFor3rdDay() {
-
+        agendaPage.checkOnlyDay3rdEventsAreDisplayed()
     }
 }
