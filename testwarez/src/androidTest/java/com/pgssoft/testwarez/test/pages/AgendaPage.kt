@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.pgssoft.testwarez.R
 import com.pgssoft.testwarez.test.utils.CustomMatcher
+import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
 
@@ -36,7 +37,7 @@ class AgendaPage {
     fun checkEventTitleOnAList() {
         Thread.sleep(1000)
         onView(withId(R.id.agenda_recycler_view))
-                .check(matches(CustomMatcher.atPosition(1, hasDescendant(allOf(withId(R.id.title), withText("VOLVO POLSKA | Testowanie w Volvo Group I"))))))
+                .check(matches(CustomMatcherKotlin.atPosition(1, hasDescendant(allOf(withId(R.id.title), withText("VOLVO POLSKA | Testowanie w Volvo Group I"))))))
     }
 
     fun tapOnFilterIcon() {
