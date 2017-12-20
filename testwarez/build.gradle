@@ -50,24 +50,24 @@ android {
         }
     }
 
-//    signingConfigs {
-//
-//        debug {
-//            final Properties signingProperties = getDebugProperties()
-//            storeFile file(signingProperties['keystore_dir'])
-//            storePassword signingProperties['keystore_password']
-//            keyPassword signingProperties['key_password']
-//            keyAlias signingProperties['alias']
-//        }
-//
-//        signedRelease {
-//            final Properties signingProperties = getReleaseProperties()
-//            storeFile file(signingProperties['keystore_dir'])
-//            storePassword signingProperties['keystore_password']
-//            keyPassword signingProperties['key_password']
-//            keyAlias signingProperties['alias']
-//        }
-//    }
+    signingConfigs {
+
+        debug {
+            final Properties signingProperties = getDebugProperties()
+            storeFile file(signingProperties['keystore_dir'])
+            storePassword signingProperties['keystore_password']
+            keyPassword signingProperties['key_password']
+            keyAlias signingProperties['alias']
+        }
+
+        signedRelease {
+            final Properties signingProperties = getReleaseProperties()
+            storeFile file(signingProperties['keystore_dir'])
+            storePassword signingProperties['keystore_password']
+            keyPassword signingProperties['key_password']
+            keyAlias signingProperties['alias']
+        }
+    }
 
     buildTypes {
 
@@ -75,7 +75,7 @@ android {
             ext.isDebug = true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig android.signingConfigs.debug
+            signingConfig android.signingConfigs.debug
             debuggable true
             multiDexEnabled true
             resValue "string", "endpoint", "http://10.10.70.31/app_dev.php/"
@@ -88,7 +88,7 @@ android {
             ext.isDebug = true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig android.signingConfigs.debug
+            signingConfig android.signingConfigs.debug
             debuggable true
             resValue "string", "endpoint", "http://api.testwarez.pl/"
         }
@@ -97,7 +97,7 @@ android {
             ext.isDebug = false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//            signingConfig android.signingConfigs.debug
+            signingConfig android.signingConfigs.debug
             debuggable false
             resValue "string", "endpoint", "http://api.testwarez.pl/"
         }
@@ -248,6 +248,14 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+
+    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'support-annotations'
+    }
+
     androidTestCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -3,10 +3,8 @@ package com.pgssoft.testwarez.test.steps
 import android.app.Activity
 import android.content.Context
 import android.test.ActivityInstrumentationTestCase2
-
 import com.pgssoft.testwarez.feature.landingpage.LandingPageActivity
 import com.pgssoft.testwarez.test.utils.ActivityFinisher
-
 import cucumber.api.java.After
 import cucumber.api.java.Before
 import cucumber.api.java.en.Given
@@ -31,6 +29,17 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
         mActivity = activity
     }
 
+//    @Before
+//    @Throws(Exception::class)
+//    fun grantPermission() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            instrumentation.getUiAutomation().executeShellCommand(
+//                    "pm grant " + InstrumentationRegistry.getTargetContext().packageName
+//                            + " android.permission.WRITE_EXTERNAL_STORAGE"
+//            )
+//        }
+//    }
+
     @After
     @Throws(Exception::class)
     public override fun tearDown() {
@@ -44,4 +53,6 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
     fun givenAppHasStarted() {
         Assert.assertNotNull(mActivity)
     }
+
+
 }
