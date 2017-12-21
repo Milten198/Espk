@@ -4,14 +4,10 @@ import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText
 import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers.*
-import android.support.v7.widget.RecyclerView
-import android.view.View
 import com.pgssoft.testwarez.R
 import com.pgssoft.testwarez.test.utils.CustomMatcher
 import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
-import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
 
 /**
@@ -59,7 +55,7 @@ class AgendaPage {
     fun confirmFilters() {
         onView(withId(R.id.bActivityFilterApply))
                 .perform(click())
-       // Thread.sleep(3000)
+        // Thread.sleep(3000)
     }
 
     fun checkOnlyDay3rdEventsAreDisplayed() {

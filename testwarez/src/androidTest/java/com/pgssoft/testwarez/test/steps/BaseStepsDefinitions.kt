@@ -2,11 +2,15 @@ package com.pgssoft.testwarez.test.steps
 
 import android.app.Activity
 import android.content.Context
+import android.support.test.InstrumentationRegistry
+import android.support.test.uiautomator.UiDevice
 import android.test.ActivityInstrumentationTestCase2
 import com.pgssoft.testwarez.feature.landingpage.LandingPageActivity
 import com.pgssoft.testwarez.test.utils.ActivityFinisher
+import com.pgssoft.testwarez.test.utils.UiAutomatorUtilsKotlin
 import cucumber.api.java.After
 import cucumber.api.java.Before
+import cucumber.api.java.en.And
 import cucumber.api.java.en.Given
 import junit.framework.Assert
 
@@ -19,6 +23,7 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
     private var mActivity: Activity? = null
     private var mInstrumentationContext: Context? = null
     private var mAppContext: Context? = null
+    private var device: UiDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
     @Before
     @Throws(Exception::class)
@@ -29,17 +34,6 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
         mActivity = activity
     }
 
-//    @Before
-//    @Throws(Exception::class)
-//    fun grantPermission() {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            instrumentation.getUiAutomation().executeShellCommand(
-//                    "pm grant " + InstrumentationRegistry.getTargetContext().packageName
-//                            + " android.permission.WRITE_EXTERNAL_STORAGE"
-//            )
-//        }
-//    }
-
     @After
     @Throws(Exception::class)
     public override fun tearDown() {
@@ -48,12 +42,17 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
         super.tearDown()
     }
 
-    @Given("App has started")
+    @And("App has started")
     @Throws(InterruptedException::class)
     fun givenAppHasStarted() {
-        Thread.sleep(1000)
+        Thread.sleep(6000)
         Assert.assertNotNull(mActivity)
     }
 
+    @Given("Permission has been granted")
+    @Throws(InterruptedException::class)
+    fun givenPermissionHasBeenGranted() {
+        UiAutomatorUtilsKotlin.grantPermission(device)
+    }
 
 }
