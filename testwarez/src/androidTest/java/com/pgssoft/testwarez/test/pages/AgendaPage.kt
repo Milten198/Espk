@@ -26,7 +26,7 @@ class AgendaPage {
     }
 
     fun typeEventNameInSearchBox(searchedText: String) {
-        Thread.sleep(6000)
+//        Thread.sleep(6000)
         onView(withId(R.id.search_src_text)).check(matches(isDisplayed()))
         onView(withId(R.id.search_src_text)).perform(typeText(searchedText))
     }
@@ -43,7 +43,7 @@ class AgendaPage {
     }
 
     fun tapOnFilterDateOne() {
-        Thread.sleep(3000)
+//        Thread.sleep(3000)
         onView(allOf(withId(R.id.tvItemFilterDate), withText("Środa, 15.11.2017")))
                 .perform(click())
     }
