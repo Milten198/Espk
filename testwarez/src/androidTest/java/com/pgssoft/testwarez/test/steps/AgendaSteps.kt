@@ -24,9 +24,9 @@ class AgendaSteps {
         agendaPage.tapOnFilterIcon()
     }
 
-    @And("^I type into input field$")
-    fun andITypeEventNameIntoInputFields() {
-        agendaPage.typeEventNameInSearchBox()
+    @And("^I type \"(.+)\" into input field$")
+    fun andITypeEventNameIntoInputFields(searchedText: String) {
+        agendaPage.typeEventNameInSearchBox(searchedText)
     }
 
     @And("^I tap on first 2 days$")
@@ -45,9 +45,9 @@ class AgendaSteps {
         agendaPage.checkSearchInputOpens()
     }
 
-    @Then("^I can see given event on a list$")
-    fun thenICanSeeGivenEventOnAList() {
-        agendaPage.checkEventTitleOnAList()
+    @Then("^I can see \"(.+)\" on a list$")
+    fun thenICanSeeGivenEventOnAList(resultedText: String) {
+        agendaPage.checkEventTitleOnAList(resultedText)
     }
 
     @Then("^I can see only events for 3rd day$")

@@ -9,6 +9,7 @@ import com.pgssoft.testwarez.R
 import com.pgssoft.testwarez.test.utils.CustomMatcher
 import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
 import org.hamcrest.Matchers.allOf
+import org.hamcrest.Matchers.containsString
 
 /**
  * Created by lfrydrych on 15.12.2017.
@@ -24,16 +25,16 @@ class AgendaPage {
         onView(withId(R.id.search_src_text)).check(matches(isDisplayed()))
     }
 
-    fun typeEventNameInSearchBox() {
+    fun typeEventNameInSearchBox(searchedText: String) {
         Thread.sleep(6000)
         onView(withId(R.id.search_src_text)).check(matches(isDisplayed()))
-        onView(withId(R.id.search_src_text)).perform(typeText("VOLVO POLSKA"))
+        onView(withId(R.id.search_src_text)).perform(typeText(searchedText))
     }
 
-    fun checkEventTitleOnAList() {
+    fun checkEventTitleOnAList(resultedText: String) {
         Thread.sleep(1000)
         onView(withId(R.id.agenda_recycler_view))
-                .check(matches(CustomMatcherKotlin.atPosition(1, hasDescendant(allOf(withId(R.id.title), withText("VOLVO POLSKA | Testowanie w Volvo Group I"))))))
+                .check(matches(CustomMatcherKotlin.atPosition(1, hasDescendant(allOf(withId(R.id.title), withText(containsString(resultedText)))))))
     }
 
     fun tapOnFilterIcon() {
