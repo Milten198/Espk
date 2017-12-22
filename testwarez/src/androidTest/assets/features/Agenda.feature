@@ -13,6 +13,7 @@ Feature: TestWarez Agenda Search
     And I type into input field
     Then I can see given event on a list
 
+    @third
   Scenario: Filter events by day
     Given Permission has been granted
     And App has started
@@ -20,7 +21,3 @@ Feature: TestWarez Agenda Search
     And I tap on first 2 days
     And I confirm filters
     Then I can see only events for 3rd day
-
-
-
-

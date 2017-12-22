@@ -11,15 +11,11 @@ import java.util.ArrayList
 import java.util.EnumSet
 
 /**
- * Created by mnicpon on 08/11/2017.
+ * Created by lfrydrych on 15.12.2017.
  */
 
 class ActivityFinisher private constructor() : Runnable {
-    private val activityLifecycleMonitor: ActivityLifecycleMonitor
-
-    init {
-        this.activityLifecycleMonitor = ActivityLifecycleMonitorRegistry.getInstance()
-    }
+    private val activityLifecycleMonitor: ActivityLifecycleMonitor = ActivityLifecycleMonitorRegistry.getInstance()
 
     override fun run() {
         val activities = ArrayList<Activity>()
@@ -28,11 +24,9 @@ class ActivityFinisher private constructor() : Runnable {
             activities.addAll(activityLifecycleMonitor.getActivitiesInStage(stage))
         }
 
-        for (activity in activities) {
-            if (!activity.isFinishing) {
-                activity.finish()
-            }
-        }
+        activities
+                .filterNot { it.isFinishing }
+                .forEach { it.finish() }
     }
 
     companion object {

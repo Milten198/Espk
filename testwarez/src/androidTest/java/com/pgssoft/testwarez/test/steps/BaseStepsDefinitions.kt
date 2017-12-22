@@ -42,14 +42,14 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
         super.tearDown()
     }
 
-    @And("App has started")
+    @And("^App has started$")
     @Throws(InterruptedException::class)
     fun givenAppHasStarted() {
-        Thread.sleep(6000)
+        //Thread.sleep(6000)
         Assert.assertNotNull(mActivity)
     }
 
-    @Given("Permission has been granted")
+    @Given("^Permission has been granted$")
     @Throws(InterruptedException::class)
     fun givenPermissionHasBeenGranted() {
         UiAutomatorUtilsKotlin.grantPermission(device)
