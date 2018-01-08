@@ -6,7 +6,6 @@ import android.support.test.espresso.action.ViewActions.typeText
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.*
 import com.pgssoft.testwarez.R
-import com.pgssoft.testwarez.test.utils.CustomMatcher
 import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.containsString
@@ -18,7 +17,7 @@ import org.hamcrest.Matchers.containsString
 class AgendaPage {
 
     fun tapOnSearchIcon() {
-        onView(withId(R.id.search_bar)).perform(click())
+        onView(withId(R.id.search_button)).perform(click())
     }
 
     fun checkSearchInputOpens() {
@@ -61,6 +60,6 @@ class AgendaPage {
 
     fun checkOnlyDay3rdEventsAreDisplayed() {
         onView(withId(R.id.agenda_recycler_view))
-                .check(matches(CustomMatcher.atPosition(0, hasDescendant(allOf(withId(R.id.tvItemArchiveConferenceHeaderTitle), withText("3 DZIEŃ - piątek 17 listopada"))))))
+                .check(matches(CustomMatcherKotlin.atPosition(0, hasDescendant(allOf(withId(R.id.tvItemArchiveConferenceHeaderTitle), withText("3 DZIEŃ - piątek 17 listopada"))))))
     }
 }
