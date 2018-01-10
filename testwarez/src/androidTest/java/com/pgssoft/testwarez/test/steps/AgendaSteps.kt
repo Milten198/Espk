@@ -2,7 +2,6 @@ package com.pgssoft.testwarez.test.steps
 
 import com.pgssoft.testwarez.test.pages.AgendaPage
 import cucumber.api.java.en.And
-
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
@@ -22,6 +21,11 @@ class AgendaSteps {
     @When("I tap on filter icon")
     fun whenITapOnFilterIcon() {
         agendaPage.tapOnFilterIcon()
+    }
+
+    @When("I change orientation to landscape")
+    fun whenIChangeOrientationToLandscape() {
+        agendaPage.changeOrientationToLandscape()
     }
 
     @And("^I type \"(.+)\" into input field$")
@@ -53,5 +57,26 @@ class AgendaSteps {
     @Then("^I can see only events for 3rd day$")
     fun thenICanSeeOnlyEventsFor3rdDay() {
         agendaPage.checkOnlyDay3rdEventsAreDisplayed()
+    }
+
+    @When("Navigation drawer has been opened")
+    fun andNavigationDrawerHasBeenOpened() {
+        agendaPage.openNavigationDrawer()
+    }
+
+    @And("I navigate to item \"(.+)\"")
+    fun andINavigateToItemAtIndex(item: String) {
+        agendaPage.navigateToItem(item)
+    }
+
+    @And("I choose speaker \"(.+)\"")
+    fun andIChooseSpeaker(speaker: String) {
+        agendaPage.chooseSpeaker(speaker)
+    }
+
+    @And("I scroll to Contacts section and tap on email address")
+    fun andIScrollToContactsSection() {
+        agendaPage.scrollToContacts()
+        agendaPage.tapOnEmailAddress()
     }
 }
