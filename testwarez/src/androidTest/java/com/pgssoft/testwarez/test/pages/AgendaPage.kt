@@ -1,6 +1,6 @@
 package com.pgssoft.testwarez.test.pages
 
-import android.support.test.InstrumentationRegistry.getInstrumentation
+import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions
 import android.support.test.espresso.action.ViewActions.*
@@ -11,8 +11,10 @@ import android.support.test.espresso.contrib.DrawerMatchers
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.uiautomator.UiDevice
+import android.support.test.uiautomator.UiSelector
 import com.pgssoft.testwarez.R
 import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
+import com.pgssoft.testwarez.test.utils.OrientationChangeAction
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.containsString
 
@@ -22,6 +24,8 @@ import org.hamcrest.Matchers.containsString
  */
 
 class AgendaPage {
+
+    private var device: UiDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
     fun tapOnSearchIcon() {
         onView(withId(R.id.search_button)).perform(click())
@@ -70,11 +74,16 @@ class AgendaPage {
                 .check(matches(CustomMatcherKotlin.atPosition(0, hasDescendant(allOf(withId(R.id.tvItemArchiveConferenceHeaderTitle), withText("3 DZIEŃ - piątek 17 listopada"))))))
     }
 
-    fun changeOrientationToLandscape() {
-        val device = UiDevice.getInstance(getInstrumentation())
+    fun changeOrientationWithUiAutomator() {
         device.setOrientationLeft()
         device.setOrientationNatural()
         device.setOrientationRight()
+    }
+
+    fun changeOrientationWithEspresso() {
+        onView(isRoot()).perform(OrientationChangeAction.orientationLandscape())
+        Thread.sleep(3000)
+        onView(isRoot()).perform(OrientationChangeAction.orientationPortrait())
     }
 
     fun openNavigationDrawer() {
@@ -83,7 +92,6 @@ class AgendaPage {
     }
 
     fun navigateToItem(item: String) {
-        Thread.sleep(3000)
         onView(ViewMatchers.withText(item)).check(ViewAssertions.matches(ViewMatchers.isDisplayed())).perform(ViewActions.click())
     }
 
@@ -93,14 +101,27 @@ class AgendaPage {
     }
 
     fun scrollToContacts() {
-        Thread.sleep(2000)
+        Thread.sleep(3000)
         onView(withId(R.id.description)).perform(swipeUp()).perform(swipeUp()).perform(swipeUp())
         onView(withText("KONTAKT")).check(matches(isDisplayed()))
     }
 
     fun tapOnEmailAddress() {
-        Thread.sleep(2000)
+        Thread.sleep(3000)
         onView(withId(R.id.email)).perform(click())
     }
 
+    fun typeEmailDetails() {
+        val emailTitle = device.findObject(UiSelector().text("Subject"))
+        val emailAddress = device.findObject(UiSelector().resourceId("com.google.android.gm:id/to"))
+        val sendButton = device.findObject(UiSelector().resourceId("com.google.android.gm:id/send"))
+
+        emailAddress.clearTextField()
+        emailAddress.setText("frydrychlu@gmail.com")
+
+        emailTitle.click()
+        emailTitle.setText("Wiadomosc")
+
+        sendButton.click()
+    }
 }

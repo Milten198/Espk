@@ -23,9 +23,14 @@ class AgendaSteps {
         agendaPage.tapOnFilterIcon()
     }
 
-    @When("I change orientation to landscape")
+    @When("I change orientation with UiAutomator")
     fun whenIChangeOrientationToLandscape() {
-        agendaPage.changeOrientationToLandscape()
+        agendaPage.changeOrientationWithUiAutomator()
+    }
+
+    @When("I change orientation with Espresso")
+    fun whenIChangeOrientationWithEspresso() {
+        agendaPage.changeOrientationWithEspresso()
     }
 
     @And("^I type \"(.+)\" into input field$")
@@ -78,5 +83,6 @@ class AgendaSteps {
     fun andIScrollToContactsSection() {
         agendaPage.scrollToContacts()
         agendaPage.tapOnEmailAddress()
+        agendaPage.typeEmailDetails()
     }
 }

@@ -1,12 +1,12 @@
 Feature: TestWarez Agenda
 
-    Scenario: Open search input
-    Given Permission has been granted
-    And App has started
-    When Navigation drawer has been opened
-    And I navigate to item "Prelegenci"
-    And I choose speaker "Artur Król"
-    And I scroll to Contacts section and tap on email address
+#  Scenario: Open search input
+#    Given Permission has been granted
+#    And App has started
+#    When Navigation drawer has been opened
+#    And I navigate to item "Prelegenci"
+#    And I choose speaker "Artur Król"
+#    And I scroll to Contacts section and tap on email address
 
 #  Scenario: Open search input
 #    Given Permission has been granted
@@ -14,11 +14,29 @@ Feature: TestWarez Agenda
 #    When I tap on search icon
 #    Then Search input opens
 
+    Scenario: Login to Twitter
+    Given Permission has been granted
+    And App has started
+    When Navigation drawer has been opened
+    And I navigate to item "Prelegenci"
+    And I choose speaker "Bartosz Szulc"
 
-#  Scenario: Change app orientation
+#  Scenario: Open Maps from TW app
 #    Given Permission has been granted
 #    And App has started
-#    When I change orientation to landscape
+#    When Navigation drawer has been opened
+#    And I navigate to item "Mapa"
+
+
+#  Scenario: Change app orientation - Espresso
+#    Given Permission has been granted
+#    And App has started
+#    When I change orientation with Espresso
+
+#  Scenario: Change app orientation - UiAutomator
+#    Given Permission has been granted
+#    And App has started
+#    When I change orientation with UiAutomator
 
 
 #  @second
