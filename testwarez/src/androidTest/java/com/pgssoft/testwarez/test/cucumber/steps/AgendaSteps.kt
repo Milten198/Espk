@@ -1,6 +1,7 @@
-package com.pgssoft.testwarez.test.steps
+package com.pgssoft.testwarez.test.cucumber.steps
 
 import com.pgssoft.testwarez.test.pages.AgendaPage
+import com.pgssoft.testwarez.test.utils.CustomScrollActions
 import cucumber.api.java.en.And
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
@@ -12,10 +13,12 @@ import cucumber.api.java.en.When
 class AgendaSteps {
 
     private val agendaPage = AgendaPage()
+    private val customScroll = CustomScrollActions()
 
     @When("^I tap on search icon$")
     fun whenITapOnSearchIcon() {
-        agendaPage.tapOnSearchIcon()
+//        agendaPage.tapOnSearchIcon()
+        customScroll.tapOn()
     }
 
     @When("I tap on filter icon")
@@ -64,17 +67,17 @@ class AgendaSteps {
         agendaPage.checkOnlyDay3rdEventsAreDisplayed()
     }
 
-    @When("Navigation drawer has been opened")
+    @When("^Navigation drawer has been opened$")
     fun andNavigationDrawerHasBeenOpened() {
         agendaPage.openNavigationDrawer()
     }
 
-    @And("I navigate to item \"(.+)\"")
+    @And("^I navigate to item \"(.+)\"$")
     fun andINavigateToItemAtIndex(item: String) {
         agendaPage.navigateToItem(item)
     }
 
-    @And("I choose speaker \"(.+)\"")
+    @And("^I choose speaker \"(.+)\"$")
     fun andIChooseSpeaker(speaker: String) {
         agendaPage.chooseSpeaker(speaker)
     }

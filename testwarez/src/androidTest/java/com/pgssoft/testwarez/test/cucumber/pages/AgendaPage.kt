@@ -12,9 +12,11 @@ import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.uiautomator.UiDevice
 import android.support.test.uiautomator.UiSelector
+import android.view.View
 import com.pgssoft.testwarez.R
 import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
 import com.pgssoft.testwarez.test.utils.OrientationChangeAction
+import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.containsString
 
@@ -27,39 +29,51 @@ class AgendaPage {
 
     private var device: UiDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
 
+    private var searchButton = withId(R.id.search_button)
+    private var searchBar = withId(R.id.search_bar)
+    private var searchSrcText = withId(R.id.search_src_text)
+    private var agendaList = withId(R.id.agenda_recycler_view)
+    private var title = withId(R.id.title)
+    private var mainMenuFilter = withId(R.id.main_menu_filter)
+    private var itemFilterDateOne = allOf(withId(R.id.tvItemFilterDate), withText("Środa, 15.11.2017"))
+    private var itemFilterDateTwo = allOf(withId(R.id.tvItemFilterDate), withText("Czwartek, 16.11.2017"))
+
+
     fun tapOnSearchIcon() {
-        onView(withId(R.id.search_button)).perform(click())
+        onView(searchButton).perform(click())
     }
 
     fun checkSearchInputOpens() {
-        onView(withId(R.id.search_src_text)).check(matches(isDisplayed()))
+        onView(searchBar).check(matches(isDisplayed()))
     }
 
     fun typeEventNameInSearchBox(searchedText: String) {
-//        Thread.sleep(6000)
-        onView(withId(R.id.search_src_text)).check(matches(isDisplayed()))
-        onView(withId(R.id.search_src_text)).perform(typeText(searchedText))
+        onView(searchSrcText).perform(typeText(searchedText))
     }
 
     fun checkEventTitleOnAList(resultedText: String) {
         Thread.sleep(1000)
-        onView(withId(R.id.agenda_recycler_view))
-                .check(matches(CustomMatcherKotlin.atPosition(1, hasDescendant(allOf(withId(R.id.title), withText(containsString(resultedText)))))))
+        onView(agendaList)
+                .check(matches(CustomMatcherKotlin.atPosition(1, hasDescendant(allOf(title, withTextCoitains(resultedText))))))
+    }
+
+    private fun withTextCoitains(text: String): Matcher<View>? {
+        return withText(containsString(text))
     }
 
     fun tapOnFilterIcon() {
-        onView(withId(R.id.main_menu_filter))
+        onView(mainMenuFilter)
                 .perform(click())
     }
 
     fun tapOnFilterDateOne() {
 //        Thread.sleep(3000)
-        onView(allOf(withId(R.id.tvItemFilterDate), withText("Środa, 15.11.2017")))
+        onView(itemFilterDateOne)
                 .perform(click())
     }
 
     fun tapOnFilterDateTwo() {
-        onView(allOf(withId(R.id.tvItemFilterDate), withText("Czwartek, 16.11.2017")))
+        onView(itemFilterDateTwo)
                 .perform(click())
     }
 

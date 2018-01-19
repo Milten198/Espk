@@ -1,4 +1,4 @@
-package com.pgssoft.testwarez.test.steps
+package com.pgssoft.testwarez.test.cucumber.steps
 
 import android.app.Activity
 import android.content.Context

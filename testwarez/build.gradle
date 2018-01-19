@@ -40,7 +40,7 @@ android {
         multiDexEnabled true
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         testApplicationId "com.pgssoft.testwarez.test"
-        testInstrumentationRunner = "com.pgssoft.testwarez.test.runner.CucumberTestRunner"
+        testInstrumentationRunner = "com.pgssoft.testwarez.test.cucumber.runner.CucumberTestRunner"
         vectorDrawables.useSupportLibrary = true
 
         javaCompileOptions {
@@ -100,6 +100,27 @@ android {
             signingConfig android.signingConfigs.debug
             debuggable false
             resValue "string", "endpoint", "http://api.testwarez.pl/"
+        }
+
+        applicationVariants.all { variant ->
+            def applicationId = variant.applicationId
+            def adb = android.getAdbExecutable() as String
+            def variantName = variant.name.capitalize()
+
+            def grantPermissionTask = tasks.create("grant${variantName}Permission") {
+                doLast {
+                    "${adb} devices".execute().text.eachLine {
+                        if (it.endsWith("device")) {
+                            def device = it.split()[0]
+                            println "Granting permission on device ${device}"
+                            "${adb} -s ${device} shell pm grant ${applicationId} android.permission.WRITE_EXTERNAL_STORAGE".execute()
+                            "${adb} -s ${device} shell pm grant ${applicationId} android.permission.READ_EXTERNAL_STORAGE".execute()
+                        }
+                    }
+                }
+            }
+            grantPermissionTask.description = "Grants permissions on M+"
+            grantPermissionTask.group = "extras"
         }
     }
 
@@ -249,6 +270,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
 
+
     androidTestCompile ('com.android.support.test.espresso:espresso-intents:3.0.1') {
         exclude group: 'com.android.support', module: 'appcompat'
         exclude group: 'com.android.support', module: 'support-v4'
@@ -264,7 +286,7 @@ dependencies {
     }
 
     androidTestCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
 }
 
@@ -300,3 +322,44 @@ android.applicationVariants.all { variant ->
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+task('cucumberRaports') {
+    def adb = android.getAdbExecutable() as String
+    def copyReportsTask = tasks.create("copyReports") {
+        doLast {
+
+            def reportDir = new File(project.buildDir, "cucumber-reports")
+            if (reportDir.exists()) {
+                reportDir.deleteDir()
+            }
+            if (!reportDir.exists()) {
+                reportDir.mkdirs()
+            }
+            "${adb} devices".execute().text.eachLine {
+                if (it.endsWith("device")) {
+                    def device = it.split()[0]
+                    def deviceDir = reportDir.getAbsolutePath().toString() + "/" + device.toString()
+                    println "Retrieving cucumber test report from device ${device} to ${deviceDir}"
+                    "${adb} -s ${device} pull /mnt/sdcard/cucumber-reports/ ${deviceDir}".execute()
+                }
+            }
+        }
+    }
+    copyReportsTask.description = "Get reports from device"
+    copyReportsTask.group = "extras"
+
+    def deleteOldReportsTask = tasks.create("deleteReports") {
+        doLast {
+            "${adb} devices".execute().text.eachLine {
+                if (it.endsWith("device")) {
+                    def device = it.split()[0]
+                    println "Delete cucumber test reports from device ${device}"
+                    "${adb} -s ${device} shell rm -rf /mnt/sdcard/cucumber-reports/".execute()
+                }
+            }
+        }
+    }
+    deleteOldReportsTask.description = "Delete old reports from device"
+    deleteOldReportsTask.group = "extras"
+}
+

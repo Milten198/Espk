@@ -1,4 +1,4 @@
-package com.pgssoft.testwarez.test.runner
+package com.pgssoft.testwarez.test.cucumber.runner
 
 /**
  * Created by mnicpon on 07/11/2017.

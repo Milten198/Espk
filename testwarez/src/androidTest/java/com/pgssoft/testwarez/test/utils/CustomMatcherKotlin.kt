@@ -7,7 +7,6 @@ import android.view.View
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 
-import android.support.test.espresso.core.internal.deps.guava.base.Preconditions.checkNotNull
 
 /**
  * Created by lfrydrych on 20.12.2017.
