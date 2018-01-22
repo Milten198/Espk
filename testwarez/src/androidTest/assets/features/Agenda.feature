@@ -1,34 +1,34 @@
 @agenda
 Feature: TestWarez Agenda
 
-  Scenario: Open search input
-    Given Permission has been granted
-    And App has started
-    When Navigation drawer has been opened
-    And I navigate to item "Prelegenci"
-    And I choose speaker "Artur Król"
-#    And I scroll to Contacts section and tap on email address
-
-#  @test1
 #  Scenario: Open search input
-#    Given Permission has been granted
-#    And App has started
-#    When I tap on search icon
-#    Then Search input opens
-
-#    @test2
-#  Scenario: Open search input 2
-#    Given Permission has been granted
-#    And App has started
-#    When I tap on search icon
-#    Then Search input opens
-#
-#    Scenario: Login to Twitter
 #    Given Permission has been granted
 #    And App has started
 #    When Navigation drawer has been opened
 #    And I navigate to item "Prelegenci"
-#    And I choose speaker "Bartosz Szulc"
+#    And I choose speaker "Artur Król"
+#    And I scroll to Contacts section and tap on email address
+
+  @test1
+  Scenario: Open search input
+    Given Permission has been granted
+    And App has started
+    When I tap on search icon
+    Then Search input opens
+
+    @test2
+  Scenario: Open search input 2
+    Given Permission has been granted
+    And App has started
+    When I tap on search icon
+    Then Search input opens
+
+    Scenario: Login to Twitter
+    Given Permission has been granted
+    And App has started
+    When Navigation drawer has been opened
+    And I navigate to item "Prelegenci"
+    And I choose speaker "Bartosz Szulc"
 ##
 #  Scenario: Open Maps from TW app
 #    Given Permission has been granted
