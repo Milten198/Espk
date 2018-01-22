@@ -14,6 +14,7 @@ import android.support.test.uiautomator.UiDevice
 import android.support.test.uiautomator.UiSelector
 import android.view.View
 import com.pgssoft.testwarez.R
+import com.pgssoft.testwarez.test.cucumber.steps.ScreenCapture
 import com.pgssoft.testwarez.test.utils.CustomMatcherKotlin
 import com.pgssoft.testwarez.test.utils.OrientationChangeAction
 import org.hamcrest.Matcher
@@ -37,7 +38,7 @@ class AgendaPage {
     private var mainMenuFilter = withId(R.id.main_menu_filter)
     private var itemFilterDateOne = allOf(withId(R.id.tvItemFilterDate), withText("Środa, 15.11.2017"))
     private var itemFilterDateTwo = allOf(withId(R.id.tvItemFilterDate), withText("Czwartek, 16.11.2017"))
-
+    val screenCapture = ScreenCapture()
 
     fun tapOnSearchIcon() {
         onView(searchButton).perform(click())
@@ -103,6 +104,7 @@ class AgendaPage {
     fun openNavigationDrawer() {
         onView(ViewMatchers.withId(R.id.drawer_layout)).perform(DrawerActions.open())
         onView(ViewMatchers.withId(R.id.drawer_layout)).check(ViewAssertions.matches(DrawerMatchers.isOpen()))
+        screenCapture.captureScreenshot("Pic of test 2")
     }
 
     fun navigateToItem(item: String) {
@@ -112,6 +114,7 @@ class AgendaPage {
     fun chooseSpeaker(speaker: String) {
         Thread.sleep(3000)
         onView(withText(speaker)).perform(click())
+        screenCapture.captureScreenshot("Pic of test 2")
     }
 
     fun scrollToContacts() {

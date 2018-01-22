@@ -24,6 +24,7 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
     private var mInstrumentationContext: Context? = null
     private var mAppContext: Context? = null
     private var device: UiDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
+    val screenCapture = ScreenCapture()
 
     @Before
     @Throws(Exception::class)
@@ -45,6 +46,7 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
     @And("^App has started$")
     @Throws(InterruptedException::class)
     fun givenAppHasStarted() {
+        screenCapture.captureScreenshot("Pic")
         Thread.sleep(6000)
         Assert.assertNotNull(mActivity)
     }
@@ -52,6 +54,7 @@ class BaseStepsDefinitions : ActivityInstrumentationTestCase2<LandingPageActivit
     @Given("^Permission has been granted$")
     @Throws(InterruptedException::class)
     fun givenPermissionHasBeenGranted() {
+        screenCapture.captureScreenshot("Pic")
         UiAutomatorUtilsKotlin.grantPermission(device)
     }
 
